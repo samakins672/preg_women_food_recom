@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Result - Food Recommendation System</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Food Recommendation for Pregnant Women</h1>
+      <hr>
+      {% if recommendations %}
+        <h2 class="mt-5">Recommended Recipes</h2>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Food Name</th>
+              <th>Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for name, ingredients in recommendations %}
+              <tr>
+                <td>{{ name }}</td>
+                <td>{{ ingredients }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}     
+      <a href="/" class="btn btn-primary">Get Another Recommendations</a>
+      <hr>
+    </div>
+  </body>
+</html>
